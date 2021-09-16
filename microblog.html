@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Blog</title>
+    <link rel="stylesheet" href="Microblog_styles.css" />
+</head>
+<body>
+  <header class="navbar">
+      <div class="navbar__brand">
+          <img src="microblog-logo.svg" alt="Microblog logo" /> Microblog
+      </div>
+      <ul class="navbar__navigation">
+          <li class="navbar__navigation-item"><a href="#" class="navbar__link">Recent</a></li>
+          <li class="navbar__navigation-item"><a href="#" class="navbar__link">Calender</a></li>
+      </ul>
+  </header>
+  <main class="main">
+      <section>
+          <h1>Start new entry here</h1>
+          <form class="form" action="/entry" method="POST">
+              <p class="form__input">
+              <label for="entry" class="form__label">Entry contents:</label>
+              <textarea name="content" id="entry" class="form__textarea"></textarea>
+              </p>
+              <button type="submit" class="form__submit">Add entry</button>
+          </form>
+      </section>
+      <section>
+          <h1>Recent posts</h1>
+          <article class="entry">
+              <div>
+                  <h2 class="entry__title">A bit of a chill day today</h2>
+                  <time class="entry__date" datetime="15-09-2021">@ September 15</time>
+              </div>
+              <p class="entry__content">
+                  Today I couldn't do much programming but that's okay! Can't be awesome every day now!
+              </p>
+          </article>
+      </section>
+  </main>
+  <footer class="footer">
+      <div class="footer__content">
+          <section class="left">
+            <a class="footer__item">Made by Vishnu</a>
+            <a class="footer__item">Check out my profile</a>
+          </section>
+          <section class="right">
+              <div class="footer__column">
+                  <a class="footer__item">Recent</a>
+                  <a class="footer__item">Calender</a>
+              </div>
+              <div class="footer__column">
+                  <a class="footer__item">About</a>
+                  <a class="footer__item">How this was made</a>
+              </div>
+          </section>
+      </div>
+  </footer>
+</body>
+</html>
