@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micro Blog</title>
-    <link rel="stylesheet" href="Microblog_styles.css" />
+    <link rel="stylesheet" href="/static/css/Microblog_styles.css" />
 </head>
 <body>
   <header class="navbar">
       <div class="navbar__brand">
-          <img src="microblog-logo.svg" alt="Microblog logo" /> Microblog
+          <img src="../static/css/microblog-logo.svg" alt="Microblog logo" /> Microblog
       </div>
       <ul class="navbar__navigation">
           <li class="navbar__navigation-item"><a href="#" class="navbar__link">Recent</a></li>
@@ -19,7 +19,7 @@
   <main class="main">
       <section>
           <h1>Start new entry here</h1>
-          <form class="form" action="/entry" method="POST">
+          <form class="form" method="POST">
               <p class="form__input">
               <label for="entry" class="form__label">Entry contents:</label>
               <textarea name="content" id="entry" class="form__textarea"></textarea>
@@ -29,15 +29,17 @@
       </section>
       <section>
           <h1>Recent posts</h1>
+          {%for entry in entries%}
           <article class="entry">
               <div>
-                  <h2 class="entry__title">A bit of a chill day today</h2>
-                  <time class="entry__date" datetime="15-09-2021">@ September 15</time>
+                  <h2 class="entry__title">{{entry[0] | truncate(30, true) }}</h2>
+                  <time class="entry__date" datetime="{{ entry[1] }}">{{ entry[2] }}</time>
               </div>
               <p class="entry__content">
-                  Today I couldn't do much programming but that's okay! Can't be awesome every day now!
+                  {{entry[0]}}
               </p>
           </article>
+          {% endfor %}
       </section>
   </main>
   <footer class="footer">
